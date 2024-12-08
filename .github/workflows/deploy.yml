@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     # Update branch according from where you will be pushing the code
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
           git config --global user.email <email ID>
           #! Update with your username associated with GitHub
           git config --global user.name <username>
-          git config --global init.defaultBranch main
+          git config --global init.defaultBranch master
           git init
           # the repository to push the deploy into
           #! Update the following with your username and repository
@@ -41,7 +41,7 @@ jobs:
           cp -R ../web/* .
           git status
           git add .
-          # add commit of the previous commit from main
+          # add commit of the previous commit from master
           echo ""
           echo "Committing to gh-pages: ${{ github.event.head_commit.message }}"
           echo ""
